@@ -15,3 +15,5 @@
 12:03pm taking a break on small talk and dialogflow, will do component diagram after lunch
 
 1:50pm added kind of bad component diagram, still need to research how the chat bot text aspect can be rendered in react via tutorial
+
+3:00pm working on backend portion of chatbot tutorial for awhile now, reconfiguring file structure to add in react later. hopefully does not break the repo
