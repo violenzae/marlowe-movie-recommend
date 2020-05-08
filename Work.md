@@ -9,3 +9,5 @@
 10:39am - configuring custom default responses (ie "don't understand") and then user welcome triggers (ie "hello" "sup" "good morning) within the dialogflow console
 
 11:06am - discovered dialogflow has the skeleton of a prebuilt video searcher with parameters/intents/entities for actors and directors and genres D: the actions aren't set to do anything yet obviously but super helpful!!
+
+11:48am - adding a ton of common small talk/chit chat responses in dialogflow console
