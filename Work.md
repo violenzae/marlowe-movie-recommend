@@ -13,3 +13,5 @@
 11:48am - adding a ton of common small talk/chit chat responses in dialogflow console
 
 12:03pm taking a break on small talk and dialogflow, will do component diagram after lunch
+
+1:50pm added kind of bad component diagram, still need to research how the chat bot text aspect can be rendered in react via tutorial
