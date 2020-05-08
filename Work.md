@@ -6,3 +6,4 @@
 
 9:50am - created dialogflow account and base "agent"
 
+10:39am - configuring custom default responses (ie "don't understand") and then user welcome triggers (ie "hello" "sup" "good morning) within the dialogflow console
