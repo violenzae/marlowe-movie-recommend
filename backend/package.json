@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "React bot for webpage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rachel Schieferstein",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -18,3 +18,12 @@
 ## Support and contact details
 
 ## Technologies Used
+
+node.js
+express
+react 
+dialogflow
+heroku
+git
+api
+mongodb at first, maybe firebase final?
