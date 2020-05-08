@@ -5,6 +5,8 @@
 
 ## Description
 
+An interactive detective-themed chatbot with a front end based in React with a node.js/Express backend that will handle querying and actions. It will ask the user questions and then use their answers to query API's/database to find movies that match their answers (genre, actors, plot, era). The chat bot aspect will be handled inside of DialogFlow, and database will either be MongoDB or Firebase (not sure yet). May potentially have a limited batch of movies in a database to query- not sure yet.
+
 ## Diagrams
 
 ![Data Flow](public/img/dataflow.png)
