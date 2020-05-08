@@ -9,6 +9,8 @@
 
 ![Data Flow](public/img/dataflow.png)
 
+![Component Diagram](public/img/components.png)
+
 ## Setup/Installation Requirements
 
 ## Known Bugs
