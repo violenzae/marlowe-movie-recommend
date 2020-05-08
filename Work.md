@@ -17,3 +17,5 @@
 1:50pm added kind of bad component diagram, still need to research how the chat bot text aspect can be rendered in react via tutorial
 
 3:00pm working on backend portion of chatbot tutorial for awhile now, reconfiguring file structure to add in react later. hopefully does not break the repo
+
+3:43pm created heroku deploy for backend (https://rocky-meadow-29560.herokuapp.com/)
