@@ -21,3 +21,15 @@
 3:43pm created heroku deploy for backend (https://rocky-meadow-29560.herokuapp.com/)
 
 4:19pm installed lots of dependencies, created basic route skeleton. set up separate google service account for api client of dialog flow
+
+
+------
+ 
+ 5/15/20
+
+ 9-11AM: Reading about deployment methods, backend API calls and eating breakfast
+
+ 11am: updating api calls to await/async to declutter code
+
+ 11:20: OH HELL YEAH API SUCCESS
+![API success](public/img/liftoff.png)
