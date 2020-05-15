@@ -36,3 +36,4 @@
 ![API success](public/img/liftoff.PNG)  
 
 
+12:30: working on setting up dev/prod google environment variables for heroku.
