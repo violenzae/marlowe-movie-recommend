@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "backend": "nodemon index.js"
+    "backend": "nodemon index.js",
+    "frontend": "npm run start --prefix client"
   },
   "author": "Rachel Schieferstein",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "nodemon": "^2.0.3"
   }
 }

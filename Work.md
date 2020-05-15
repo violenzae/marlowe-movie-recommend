@@ -37,3 +37,5 @@
 
 
 12:30: working on setting up dev/prod google environment variables for heroku.
+
+12:57pm: api calls to deployed heroku backend server work!!
