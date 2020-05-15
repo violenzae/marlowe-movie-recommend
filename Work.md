@@ -39,3 +39,5 @@
 12:30: working on setting up dev/prod google environment variables for heroku.
 
 12:57pm: api calls to deployed heroku backend server work!!
+
+1:30pm: setting up react app and concurrently npm package. got both to run locally thru making npm run dev command in package.json, installing proxy middleware npm
