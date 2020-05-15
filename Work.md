@@ -31,5 +31,8 @@
 
  11am: updating api calls to await/async to declutter code
 
- 11:20: OH HELL YEAH API SUCCESS
-![API success](public/img/liftoff.PNG)
+ 11:20: OH HELL YEAH API SUCCESS  
+
+![API success](public/img/liftoff.PNG)  
+
+
