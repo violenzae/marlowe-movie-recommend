@@ -6,7 +6,7 @@ class Chatbot extends React.Component {
   messagesEnd;
   constructor(props){
     super(props);
-
+    this.textInput = React.createRef();
     this.state = {
       messages: []
     }
@@ -52,7 +52,8 @@ class Chatbot extends React.Component {
   }
 
   componentDidUpdate(){
-    this.messagesEnd.scrollIntoView({behavior: 'smooth' })
+    this.messagesEnd.scrollIntoView({behavior: 'smooth' });
+    
   }
 
   renderMessages(stateMessages) {
@@ -69,6 +70,7 @@ class Chatbot extends React.Component {
     if (e.key === 'Enter') {
       this.df_text_query(e.target.value);
       e.target.value = '';
+      this.textInput.current.focus();
     }
   }
 
@@ -81,7 +83,7 @@ class Chatbot extends React.Component {
           <div ref={(el) => {this.messagesEnd = el;}} style={{float: 'left', clear: 'both'}}>
 
         </div>
-          <input type="text" onKeyPress={this.handleInputKeyPress}/>
+          <input ref={this.textInput} type="text" onKeyPress={this.handleInputKeyPress}/>
         </div>
       </div>
     )
