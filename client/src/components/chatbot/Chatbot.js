@@ -71,7 +71,9 @@ class Chatbot extends React.Component {
         if (message.msg && message.msg.text && message.msg.text.text) {
           return <Message key={i} speaks = {message.speaks} text ={message.msg.text.text} />
         } else {
+          return (
           <h2>Cards</h2>
+          )
         }
         
       }) 
