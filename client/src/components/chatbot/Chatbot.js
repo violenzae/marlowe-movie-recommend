@@ -1,6 +1,10 @@
 import React from 'react';
 import axios from 'axios/index';
 import Message from './Message';
+import Cookies from 'universal-cookie';
+import {v4 as uuid} from 'uuid';
+
+const cookies = new Cookies();
 
 class Chatbot extends React.Component {
   messagesEnd;
@@ -53,7 +57,7 @@ class Chatbot extends React.Component {
 
   componentDidUpdate(){
     this.messagesEnd.scrollIntoView({behavior: 'smooth' });
-    
+    this.textInput.current.focus();
   }
 
   renderMessages(stateMessages) {
@@ -70,7 +74,7 @@ class Chatbot extends React.Component {
     if (e.key === 'Enter') {
       this.df_text_query(e.target.value);
       e.target.value = '';
-      this.textInput.current.focus();
+      
     }
   }
 
