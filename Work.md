@@ -40,4 +40,9 @@
 
 12:57pm: api calls to deployed heroku backend server work!!
 
-1:30pm: setting up react app and concurrently npm package. got both to run locally thru making npm run dev command in package.json, installing proxy middleware npm
+1:30pm: setting up react app and concurrently npm package. got both to run locally thru making npm run dev command in package.json, installing proxy middleware npm'
+
+
+5/18/20
+
+spent today working either in dialogflow console tweaking the custom json responses or following along with the tutorial on backend/front end. the code end work is covered in the commits from today.
