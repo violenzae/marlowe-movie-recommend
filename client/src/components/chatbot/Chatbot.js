@@ -20,8 +20,8 @@ class Chatbot extends React.Component {
       }
     }
 
-    this.setState({messages: [...this.state.messages]}, says);
-    const res = await axios.post(/api/df_text_query, {text});
+    this.setState({messages: [...this.state.messages], says});
+    const res = await axios.post('/api/df_text_query', {text});
     
     for (let msg of res.data.fulfillmentMessages){
       says = {
@@ -43,6 +43,10 @@ class Chatbot extends React.Component {
       this.setState({messages: [...this.state.messages, says]});
     }
 
+  }
+
+  componentDidMount(){
+    this.df_event_query('Welcome');
   }
 
   renderMessages(stateMessages) {
