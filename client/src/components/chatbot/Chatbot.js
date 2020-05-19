@@ -56,7 +56,7 @@ class Chatbot extends React.Component {
 
     for (let msg of res.data.fulfillmentMessages) {
       let says = {
-        speaks: "me",
+        speaks: "bot",
         msg: msg,
       };
       this.setState({ messages: [...this.state.messages, says] });
@@ -76,9 +76,14 @@ class Chatbot extends React.Component {
     event.preventDefault();
     event.stopPropagation();
     
-
-    this.df_text_query(text);
-    this.setState({ messages: this.state.messages.filter((_,i) => i !== this.state.messages.length-1)});
+    switch (payload) {
+      case "training_masterclass":
+        this.df_event_query("MASTERCLASS");
+        break;
+      default:
+        this.df_text_query(text);
+        break;
+    }
   }
 
   renderCards(cards) {
