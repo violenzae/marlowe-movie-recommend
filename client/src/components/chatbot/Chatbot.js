@@ -16,7 +16,9 @@ class Chatbot extends React.Component {
     this.state = {
       messages: [],
       genre: "",
-      year: ""
+      year: "",
+      cards: [],
+      params: false
     };
 
     if (cookies.get("userID") === undefined) {
@@ -100,42 +102,12 @@ class Chatbot extends React.Component {
       };
       this.setState({ messages: [...this.state.messages, says] });
     }
-
-    // if (res.data.queryResult.parameters.genre) {
-      // let genre = res.data.queryResult.parameters.genre.toLowerCase();
-      // let year = res.data.queryResult.parameters.year;
-
-      // switch (genre){
-      //   case "science fiction":
-      //     this.setState({genre: "878", year: year})
-      //     break;
-      //   case "action":
-      //     this.setState({genre: "28", year: year})
-      //     break;
-      //   case "comedy":
-      //     this.setState({genre: "35", year: year})
-      //     break;
-      //   case "crime":
-      //     this.setState({genre: "80", year: year})
-      //     break;
-      //   case "documentary":
-      //     this.setState({genre: "99", year: year})
-      //     break;
-      //   case "western":
-      //     this.setState({genre: "37", year: year})
-      //     break;
-      //   case "romance":
-      //     this.setState({genre: "10749", year: year})
-      //     break;
-      //   default:
-      //     this.df_text_query("i'm not following your instructions ;)");
-      //     break;
-      console.log(res.data);
-      // }
-      console.log(this.state.genre);
-    // }
-
   }
+
+  
+    // for (let card of res.data
+  
+
 
   componentDidMount() {
     this.df_event_query("Welcome");
@@ -144,6 +116,17 @@ class Chatbot extends React.Component {
   componentDidUpdate() {
     this.messagesEnd.scrollIntoView({ behavior: "smooth" });
     this.textInput.current.focus();
+    if (this.state.params === true) {
+      axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_KEY}&language=en-US&sort_by=popularity.asc&include_adult=false&include_video=false&page=1&year=${this.state.year}&with_genres=${this.state.genre}`)
+        // .then(result => this.setState({cards: result.data}));
+          .then(result => {
+            console.log(result.data);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+          console.log("tmdb :", this.state.cards);
+    }
 
     // if (this.state.messages[this.state.messages[this.state.message.length-1].]
   }
@@ -158,6 +141,7 @@ class Chatbot extends React.Component {
         break;
       case "recommend_yes":
         //async here to make api call
+        this.setState({params: true})
         this.df_event_query("SHOW_RECOMMENDATIONS")
         break;
       default:
