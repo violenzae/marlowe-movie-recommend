@@ -46,3 +46,9 @@
 5/18/20
 
 spent today working either in dialogflow console tweaking the custom json responses or following along with the tutorial on backend/front end. the code end work is covered in the commits from today.
+
+5/19/20
+
+strugglebussing in dialogflow setting up a path tree that will ask all of the questions used in the movie api call.. which does not exist yet. ;-;
+
+possibly switching to TMDB instead of OMDB for api, it has discover feature for genre and year that will be more useful.
