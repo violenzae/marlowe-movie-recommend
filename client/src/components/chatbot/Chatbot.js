@@ -117,9 +117,11 @@ class Chatbot extends React.Component {
     this.messagesEnd.scrollIntoView({ behavior: "smooth" });
     this.textInput.current.focus();
     if (this.state.params === true) {
-      axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_KEY}&language=en-US&sort_by=popularity.asc&include_adult=false&include_video=false&page=1&year=${this.state.year}&with_genres=${this.state.genre}`)
+      let year = this.state.year;
+      let genre = this.state.genre;
+      axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=popularity.asc&include_adult=false&include_video=false&page=1&year=${year}&with_genres=${genre}`)
         // .then(result => this.setState({cards: result.data}));
-          .then(result => {
+          .then(result => { 
             console.log(result.data);
           })
           .catch(error => {
