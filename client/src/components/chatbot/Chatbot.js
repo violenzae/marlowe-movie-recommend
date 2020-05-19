@@ -50,9 +50,9 @@ class Chatbot extends React.Component {
     }
 
 
-    if (res.data.parameters.genre) {
-      let genre = res.data.parameters.genre.toLowerCase();
-      let year = res.data.parameters.year;
+       if (res.data.parameters.genre) {
+      let genre = res.data.parameters.genre.stringValue.toLowerCase();
+      let year = res.data.parameters.year.stringValue;
 
       switch (genre){
         case "science fiction":
@@ -79,10 +79,11 @@ class Chatbot extends React.Component {
         default:
           this.df_text_query("i'm not following your instructions ;)");
           break;
+      
       }
+      console.log(res.data);
       console.log(this.state.genre);
     }
-    
   }
 
   async df_event_query(event) {
@@ -98,6 +99,41 @@ class Chatbot extends React.Component {
       };
       this.setState({ messages: [...this.state.messages, says] });
     }
+
+    // if (res.data.queryResult.parameters.genre) {
+      // let genre = res.data.queryResult.parameters.genre.toLowerCase();
+      // let year = res.data.queryResult.parameters.year;
+
+      // switch (genre){
+      //   case "science fiction":
+      //     this.setState({genre: "878", year: year})
+      //     break;
+      //   case "action":
+      //     this.setState({genre: "28", year: year})
+      //     break;
+      //   case "comedy":
+      //     this.setState({genre: "35", year: year})
+      //     break;
+      //   case "crime":
+      //     this.setState({genre: "80", year: year})
+      //     break;
+      //   case "documentary":
+      //     this.setState({genre: "99", year: year})
+      //     break;
+      //   case "western":
+      //     this.setState({genre: "37", year: year})
+      //     break;
+      //   case "romance":
+      //     this.setState({genre: "10749", year: year})
+      //     break;
+      //   default:
+      //     this.df_text_query("i'm not following your instructions ;)");
+      //     break;
+      console.log(res.data);
+      // }
+      console.log(this.state.genre);
+    // }
+
   }
 
   componentDidMount() {

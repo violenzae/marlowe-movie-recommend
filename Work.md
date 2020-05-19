@@ -52,3 +52,5 @@ spent today working either in dialogflow console tweaking the custom json respon
 strugglebussing in dialogflow setting up a path tree that will ask all of the questions used in the movie api call.. which does not exist yet. ;-;
 
 possibly switching to TMDB instead of OMDB for api, it has discover feature for genre and year that will be more useful.
+
+having a hard time accessing the parameters within json.. will probably just follow along with tutorial to add to database and access from there.
