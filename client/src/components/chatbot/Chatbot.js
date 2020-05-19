@@ -15,6 +15,8 @@ class Chatbot extends React.Component {
     this.textInput = React.createRef();
     this.state = {
       messages: [],
+      genre: "",
+      year: ""
     };
 
     if (cookies.get("userID") === undefined) {
@@ -46,6 +48,41 @@ class Chatbot extends React.Component {
       };
       this.setState({ messages: [...this.state.messages, says] });
     }
+
+
+    if (res.data.parameters.genre) {
+      let genre = res.data.parameters.genre.toLowerCase();
+      let year = res.data.parameters.year;
+
+      switch (genre){
+        case "science fiction":
+          this.setState({genre: "878", year: year})
+          break;
+        case "action":
+          this.setState({genre: "28", year: year})
+          break;
+        case "comedy":
+          this.setState({genre: "35", year: year})
+          break;
+        case "crime":
+          this.setState({genre: "80", year: year})
+          break;
+        case "documentary":
+          this.setState({genre: "99", year: year})
+          break;
+        case "western":
+          this.setState({genre: "37", year: year})
+          break;
+        case "romance":
+          this.setState({genre: "10749", year: year})
+          break;
+        default:
+          this.df_text_query("i'm not following your instructions ;)");
+          break;
+      }
+      console.log(this.state.genre);
+    }
+    
   }
 
   async df_event_query(event) {
@@ -70,6 +107,8 @@ class Chatbot extends React.Component {
   componentDidUpdate() {
     this.messagesEnd.scrollIntoView({ behavior: "smooth" });
     this.textInput.current.focus();
+
+    // if (this.state.messages[this.state.messages[this.state.message.length-1].]
   }
 
   _handleQuickReplyPayload = (event, payload, text) => {
