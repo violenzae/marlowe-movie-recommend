@@ -134,12 +134,17 @@ class Chatbot extends React.Component {
 
   render() {
     return (
-      <div style={{ height: 400, width: 400, float: "right" }}>
+      <div style={{ height: 400, width: 400, position: 'absolute', bottom: 0, right: 0, border: '1px solid lightgrey'}}>
+        <nav>
+            <div className="nav-wrapper">
+              <a className="brand-logo">Marlowe</a>
+            </div>
+          </nav>
         <div
           id="chatbot"
           style={{ height: "100%", width: "100%", overflow: "auto" }}
         >
-          <h2>Chatbot</h2>
+          
           {this.renderMessages(this.state.messages)}
           <div
             ref={(el) => {
@@ -147,7 +152,10 @@ class Chatbot extends React.Component {
             }}
             style={{ float: "left", clear: "both" }}
           ></div>
-          <input
+         
+        </div>
+        <div className="col s12">
+        <input style={{margin:0, paddingLeft: '1%', paddingRight: '1%', width: '98%'}} placeholder="Type a message"
             ref={this.textInput}
             type="text"
             onKeyPress={this.handleInputKeyPress}
