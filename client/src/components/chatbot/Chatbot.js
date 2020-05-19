@@ -119,6 +119,10 @@ class Chatbot extends React.Component {
       case "training_masterclass":
         this.df_event_query("MASTERCLASS");
         break;
+      case "recommend_yes":
+        //async here to make api call
+        this.df_event_query("SHOW_RECOMMENDATIONS")
+        break;
       default:
         this.df_text_query(text);
         break;
