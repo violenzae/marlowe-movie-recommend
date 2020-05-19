@@ -75,8 +75,10 @@ class Chatbot extends React.Component {
   _handleQuickReplyPayload = (event, payload, text) => {
     event.preventDefault();
     event.stopPropagation();
+    
 
     this.df_text_query(text);
+    this.setState({ messages: this.state.messages.filter((_,i) => i !== this.state.messages.length-1)});
   }
 
   renderCards(cards) {

@@ -14,7 +14,7 @@ const QuickReply = (props) => {
  );
   } else {
     return (
-      <a style={{margin: 3}} href={props.reply.structValue.fields.link.stringValue} class="btn-floating btn-large waves-effect waves-light red">{props.reply.structValue.fields.text.stringValue}</a>
+      <a style={{margin: 3}} target="_blank" href={props.reply.structValue.fields.link.stringValue} class="btn-floating btn-large waves-effect waves-light red">{props.reply.structValue.fields.text.stringValue}</a>
     )
   }
 };
