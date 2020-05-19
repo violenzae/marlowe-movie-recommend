@@ -50,9 +50,9 @@ class Chatbot extends React.Component {
     }
 
 
-       if (res.data.parameters.genre) {
-      let genre = res.data.parameters.genre.stringValue.toLowerCase();
-      let year = res.data.parameters.year.stringValue;
+       if (res.data.parameters.fields.year.stringValue != "") {
+      let genre = res.data.parameters.fields.genre.stringValue.toLowerCase();
+      let year = res.data.parameters.fields.year.stringValue;
 
       switch (genre){
         case "science fiction":
@@ -81,8 +81,9 @@ class Chatbot extends React.Component {
           break;
       
       }
-      console.log(res.data);
+      console.log("queryresult: ", res.data.parameters);
       console.log(this.state.genre);
+      console.log(this.state.year);
     }
   }
 

@@ -55,4 +55,6 @@ possibly switching to TMDB instead of OMDB for api, it has discover feature for 
 
 having a hard time accessing the parameters within json.. will probably just follow along with tutorial to add to database and access from there.
 
-setting up the mongodb database and schema and connecting to backend .
+setting up the mongodb database and schema and connecting to backend . installing mongoose.
+
+oh god dammmmn i got the json right in the save state so i don't need the database for now! yessss.
