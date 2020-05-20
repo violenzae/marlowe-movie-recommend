@@ -161,6 +161,11 @@ class Chatbot extends React.Component {
     return cards.map((card, i) => <div style={{padding: 30, alignItems: 'center', textAlign: 'center' }} key={i}><Card style={{display: 'inline-block'}} key={i} payload={card} /></div>);
   }
 
+  redo = () => {
+    this.df_event_query("Welcome")
+    this.setState({cards: null})
+  }
+
   renderOneMessage(message, i) {
     
      if (this.state.cards) {
@@ -169,10 +174,11 @@ class Chatbot extends React.Component {
 
       return (
 
-                <div>
+                <div style={{textAlign: "center"}}>
                   {this.renderCards(
                     cards
                   )}
+                  <button onClick={this.redo} className="btn red">Again?</button>
                 </div>
       );
     } 
