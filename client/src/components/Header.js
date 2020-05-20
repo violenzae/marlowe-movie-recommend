@@ -5,7 +5,8 @@ import Marlowe from '../img/marlowe.png'
 const Header = () => {
   return (
     <div style={{height: '100%'}}>
-      <img src={Marlowe}/>
+      {/* <img src={Marlowe} style={{height: '100%'}}/> */}
+      <p>f</p>
     </div>
   )
 }

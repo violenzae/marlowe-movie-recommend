@@ -1,0 +1,8 @@
+body {
+  background-color: black;
+  background-image: url(./img/marlowe.png);
+  background-position-x: center;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  height: 100%;
+}

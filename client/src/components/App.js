@@ -11,8 +11,8 @@ const App = () => {
   return (
 
     <React.Fragment>
-      <div className="container" style={{backgroundColor: 'black', height: '100%'}}>
-        <div className="row">
+      <div className="container" style={{height: '100%'}}>
+        <div className="row" style={{margin: 'auto', paddingTop: 100}}>
           <div className="col s6"><Header /></div>
           <div className="col s6"><Chatbot/></div>
         </div>
