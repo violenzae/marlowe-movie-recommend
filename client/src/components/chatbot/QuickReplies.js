@@ -1,5 +1,6 @@
 import React from 'react';
 import QuickReply from './QuickReply';
+import Logo from '../../img/mag.png';
 
 class QuickReplies extends React.Component {
   constructor(props) {
@@ -29,8 +30,8 @@ class QuickReplies extends React.Component {
       <div className="col s12 m8 offset-m2 l6 offset-l3">
         <div className="card-panel grey lighten-5 z-depth-1">
           <div className="row valign-wrapper">
-          <a className="btn-floating btn-large waves-effect waves-light red">
-            {this.props.speaks}
+          <a className="btn-floating btn-large waves-effect waves-light red" >
+            <img src={Logo}/>
           </a>
           
           <div id="quick-replies" className="col s10">

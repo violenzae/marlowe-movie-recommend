@@ -9,16 +9,16 @@ import Chatbot from './chatbot/Chatbot';
 
 const App = () => {
   return (
-  <div>
-    <BrowserRouter>
-    <div className="container">
-      <div className="row">
-        <div className="col s5"><Header /></div>
-        <div className="col s7"><Chatbot/></div>
+
+    <React.Fragment>
+      <div className="container" style={{backgroundColor: 'black', height: '100%'}}>
+        <div className="row">
+          <div className="col s6"><Header /></div>
+          <div className="col s6"><Chatbot/></div>
+        </div>
       </div>
-    </div>
-    </BrowserRouter>
-  </div>
+    </React.Fragment>
+
   )
 }
 

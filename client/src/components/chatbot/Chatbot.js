@@ -247,7 +247,7 @@ class Chatbot extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '40%', width: '100%', border: '1px solid lightgrey'}}>
+      <div style={{ backgroundColor: 'black', height: '100%', width: '100%', border: '1px solid lightgrey'}}>
         <nav>
             <div className="nav-wrapper">
               <a className="brand-logo">Marlowe</a>
@@ -255,7 +255,7 @@ class Chatbot extends React.Component {
           </nav>
         <div
           id="chatbot"
-          style={{ height: "100%", width: "100%", overflow: "auto" }}
+          style={{ height: "90%", width: "100%", overflow: "auto" }}
         >
           
           {this.renderMessages(this.state.messages)}
