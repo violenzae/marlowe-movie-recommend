@@ -28,6 +28,7 @@ class Chatbot extends React.Component {
   }
 
   async df_text_query(text) {
+    await this.resolveAfterXSeconds(1);
     let says = {
       speaks: "me",
       msg: {
@@ -90,6 +91,7 @@ class Chatbot extends React.Component {
   }
 
   async df_event_query(event) {
+    await this.resolveAfterXSeconds(1);
     const res = await axios.post("/api/df_event_query", {
       event: event,
       userID: cookies.get("userID"),
@@ -109,8 +111,10 @@ class Chatbot extends React.Component {
   
 
 
-  componentDidMount() {
+ async componentDidMount() {
+    await this.resolveAfterXSeconds(1);
     this.df_event_query("Welcome");
+
   }
 
   componentDidUpdate() {
@@ -198,6 +202,7 @@ class Chatbot extends React.Component {
     } 
     
     if (message.msg && message.msg.text && message.msg.text.text) {
+      
       return (
         <Message key={i} speaks={message.speaks} text={message.msg.text.text} />
       );}
@@ -210,6 +215,14 @@ class Chatbot extends React.Component {
       speaks = {message.speaks}
       payload={message.msg.payload.fields.quick_replies.listValue.values} />
     }
+  }
+
+  resolveAfterXSeconds(x) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(x);
+      }, x = 1000);
+    });
   }
 
   renderMessages(stateMessages) {
