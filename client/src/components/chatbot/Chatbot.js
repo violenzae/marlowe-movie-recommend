@@ -7,6 +7,8 @@ import Card from './Card';
 import QuickReplies from './QuickReplies';
 import Title from '../../img/title.png';
 import TitleNeon from '../../img/titleneon.png';
+import TitleNeon2 from '../../img/neon2.png'
+import TitleNeon3 from '../../img/neon3.png'
 
 const cookies = new Cookies();
 
@@ -230,12 +232,12 @@ class Chatbot extends React.Component {
   render() {
     return (
       <React.Fragment>
-      <div style={{height: '100%', width: '100%', border: '1px solid lightgrey'}}>
+      <div style={{height: '100%', width: '100%'}}>
         <nav>
           
-            <div className="nav-wrapper red" style={{border: '1px dotted lightgrey'}}>
+            <div className="nav-wrapper black" style={{border: '1px dotted lightgrey'}}>
               <a className="brand-logo">
-                <img src={TitleNeon}/>
+                <img src={TitleNeon2}/>
               </a>
             </div>
           </nav>
