@@ -116,6 +116,8 @@ class Chatbot extends React.Component {
  async componentDidMount() {
     await this.resolveAfterXSeconds(1);
     this.df_event_query("Welcome");
+    
+      
 
   }
 
