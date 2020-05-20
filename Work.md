@@ -58,3 +58,9 @@ having a hard time accessing the parameters within json.. will probably just fol
 setting up the mongodb database and schema and connecting to backend . installing mongoose.
 
 oh god dammmmn i got the json right in the save state so i don't need the database for now! yessss.
+
+
+
+5/20/20
+
+12:30pm - had an inspired day and pretty much wrapped up all of the coding and design side of things as memorialized in git commits. will now work on deploying, more conversation flavor text in dialogflow console and creating the README.
