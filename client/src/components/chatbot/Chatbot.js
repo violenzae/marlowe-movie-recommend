@@ -17,7 +17,7 @@ class Chatbot extends React.Component {
       messages: [],
       genre: "",
       year: "",
-      cards: [],
+      cards: null,
       params: false
     };
 
@@ -122,16 +122,24 @@ class Chatbot extends React.Component {
       axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=popularity.asc&include_adult=false&include_video=false&page=1&year=${year}&with_genres=${genre}`)
         // .then(result => this.setState({cards: result.data}));
           .then(result => { 
-            console.log(result.data);
+            
+            this.setState({ cards: [result.data.results[0]] });
+            console.log(result.data.results);
+            console.log("cards: ", this.state.cards);
+            this.setState({params: false});
+
+
           })
           .catch(error => {
             console.log(error);
           });
-          console.log("tmdb :", this.state.cards);
+      
+        
+      }
     }
 
     // if (this.state.messages[this.state.messages[this.state.message.length-1].]
-  }
+  
 
   _handleQuickReplyPayload = (event, payload, text) => {
     event.preventDefault();
@@ -153,15 +161,14 @@ class Chatbot extends React.Component {
   }
 
   renderCards(cards) {
-    return cards.map((card, i) => <Card key={i} payload={card.structValue} />);
+    return cards.map((card, i) => <div key ={i}><Card payload={card} /></div>);
   }
 
   renderOneMessage(message, i) {
-    if (message.msg && message.msg.text && message.msg.text.text) {
-      return (
-        <Message key={i} speaks={message.speaks} text={message.msg.text.text} />
-      );
-    } else if (message.msg && message.msg.payload.fields.cards) {
+    
+     if (this.state.cards) {
+      let cards = this.state.cards;
+      console.log("cards: ", cards);
 
       return (
         <div key={i}>
@@ -180,12 +187,12 @@ class Chatbot extends React.Component {
                   style={{
                     height: 300,
                     width:
-                      message.msg.payload.fields.cards.listValue.values.length *
+                      cards.length *
                       270,
                   }}
                 >
                   {this.renderCards(
-                    message.msg.payload.fields.cards.listValue.values
+                    cards
                   )}
                 </div>
               </div>
@@ -193,7 +200,14 @@ class Chatbot extends React.Component {
           </div>
         </div>
       );
-    } else if (message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.quick_replies) {
+    } 
+    
+    if (message.msg && message.msg.text && message.msg.text.text) {
+      return (
+        <Message key={i} speaks={message.speaks} text={message.msg.text.text} />
+      );}
+    
+    else if (message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.quick_replies) {
       return <QuickReplies
       text={message.msg.payload.fields.text ? message.msg.payload.fields.text : null}
       key={i}
