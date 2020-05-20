@@ -158,7 +158,7 @@ class Chatbot extends React.Component {
   }
 
   renderCards(cards) {
-    return cards.map((card, i) => <div style={{padding: 30, margin: 30, paddingBottom: 50}} key={i}><Card key={i} payload={card} /></div>);
+    return cards.map((card, i) => <div style={{padding: 30, alignItems: 'center', textAlign: 'center' }} key={i}><Card style={{display: 'inline-block'}} key={i} payload={card} /></div>);
   }
 
   renderOneMessage(message, i) {
