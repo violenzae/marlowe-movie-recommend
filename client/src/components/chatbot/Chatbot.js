@@ -108,9 +108,6 @@ class Chatbot extends React.Component {
       this.setState({ messages: [...this.state.messages, says] });
     }
   }
-
-  
-    // for (let card of res.data
   
 
 
@@ -127,7 +124,6 @@ class Chatbot extends React.Component {
       let year = this.state.year;
       let genre = this.state.genre;
       axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=popularity.asc&include_adult=false&include_video=false&page=1&year=${year}&with_genres=${genre}`)
-        // .then(result => this.setState({cards: result.data}));
           .then(result => { 
             
             this.setState({ cards: result.data.results});
@@ -162,7 +158,7 @@ class Chatbot extends React.Component {
   }
 
   renderCards(cards) {
-    return cards.map((card, i) => <Card key={i} payload={card} />);
+    return cards.map((card, i) => <div style={{padding: 30, margin: 30, paddingBottom: 50}} key={i}><Card key={i} payload={card} /></div>);
   }
 
   renderOneMessage(message, i) {
@@ -172,31 +168,12 @@ class Chatbot extends React.Component {
       console.log("cards: ", cards);
 
       return (
-          <div className="card-panel grey lighten-5 z-depth-1">
-            <div style={{ overflow: "hidden" }}>
-              <div className="col s2">
-                <a
-                  href="/"
-                  className="btn-floating btn-large waves-effect waves-light red"
-                >
-                </a>
-              </div>
-              <div style={{ overflow: "auto", overflowY: "scroll" }}>
-                <div
-                  style={{
-                    height: 300,
-                    width:
-                      cards.length *
-                      270,
-                  }}
-                >
+
+                <div>
                   {this.renderCards(
                     cards
                   )}
                 </div>
-              </div>
-            </div>
-          </div>
       );
     } 
     
