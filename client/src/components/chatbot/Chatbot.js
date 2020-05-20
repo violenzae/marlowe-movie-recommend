@@ -20,6 +20,7 @@ class Chatbot extends React.Component {
       genre: "",
       year: "",
       cards: null,
+      fields: null,
       params: false
     };
 
@@ -51,11 +52,11 @@ class Chatbot extends React.Component {
         speaks: "bot",
         msg: msg,
       };
-      this.setState({ messages: [...this.state.messages, says] });
+      this.setState({ messages: [...this.state.messages, says], fields: res.data});
     }
 
-
-       if (res.data.parameters.fields.year.stringValue != "" &&  res.data.parameters.fields.year.stringValue != null ) {
+    if(this.state.fields.allRequiredParamsPresent == true) {
+      if (this.state.fields.parameters.fields.genre) {
       let genre = res.data.parameters.fields.genre.stringValue.toLowerCase();
       let year = res.data.parameters.fields.year.stringValue;
 
@@ -84,9 +85,9 @@ class Chatbot extends React.Component {
         default:
           this.df_text_query("i'm not following your instructions ;)");
           break;
-      
+        }
       }
-      console.log("queryresult: ", res.data.parameters);
+      console.log("queryresult: ", res.data);
       console.log(this.state.genre);
       console.log(this.state.year);
     }
@@ -150,11 +151,7 @@ class Chatbot extends React.Component {
     event.stopPropagation();
     
     switch (payload) {
-      case "training_masterclass":
-        this.df_event_query("MASTERCLASS");
-        break;
       case "recommend_yes":
-        //async here to make api call
         this.setState({params: true})
         this.df_event_query("SHOW_RECOMMENDATIONS")
         break;
@@ -253,7 +250,7 @@ class Chatbot extends React.Component {
       <div style={{height: '100%', width: '100%', border: '1px solid lightgrey'}}>
         <nav>
           
-            <div className="nav-wrapper grey">
+            <div className="nav-wrapper red" style={{border: '1px dotted lightgrey'}}>
               <a className="brand-logo">
                 <img src={TitleNeon}/>
               </a>
