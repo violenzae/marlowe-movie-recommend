@@ -52,7 +52,7 @@ class Chatbot extends React.Component {
     }
 
 
-       if (res.data.parameters.fields.year.stringValue != "") {
+       if (res.data.parameters.fields.year.stringValue != "" &&  res.data.parameters.fields.year.stringValue != null ) {
       let genre = res.data.parameters.fields.genre.stringValue.toLowerCase();
       let year = res.data.parameters.fields.year.stringValue;
 
@@ -123,7 +123,7 @@ class Chatbot extends React.Component {
         // .then(result => this.setState({cards: result.data}));
           .then(result => { 
             
-            this.setState({ cards: [result.data.results[0]] });
+            this.setState({ cards: result.data.results});
             console.log(result.data.results);
             console.log("cards: ", this.state.cards);
             this.setState({params: false});
