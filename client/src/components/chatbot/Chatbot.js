@@ -137,8 +137,6 @@ class Chatbot extends React.Component {
         
       }
     }
-
-    // if (this.state.messages[this.state.messages[this.state.message.length-1].]
   
 
   _handleQuickReplyPayload = (event, payload, text) => {
@@ -161,7 +159,7 @@ class Chatbot extends React.Component {
   }
 
   renderCards(cards) {
-    return cards.map((card, i) => <div key ={i}><Card payload={card} /></div>);
+    return cards.map((card, i) => <Card key={i} payload={card} />);
   }
 
   renderOneMessage(message, i) {
@@ -171,7 +169,6 @@ class Chatbot extends React.Component {
       console.log("cards: ", cards);
 
       return (
-        <div key={i}>
           <div className="card-panel grey lighten-5 z-depth-1">
             <div style={{ overflow: "hidden" }}>
               <div className="col s2">
@@ -179,7 +176,6 @@ class Chatbot extends React.Component {
                   href="/"
                   className="btn-floating btn-large waves-effect waves-light red"
                 >
-                  {message.speaks}
                 </a>
               </div>
               <div style={{ overflow: "auto", overflowY: "scroll" }}>
@@ -198,7 +194,6 @@ class Chatbot extends React.Component {
               </div>
             </div>
           </div>
-        </div>
       );
     } 
     
@@ -218,6 +213,9 @@ class Chatbot extends React.Component {
   }
 
   renderMessages(stateMessages) {
+    if(this.state.cards){
+      return this.renderOneMessage();
+    }
     if (stateMessages) {
       return stateMessages.map((message, i) => {
         return this.renderOneMessage(message, i);
@@ -236,7 +234,7 @@ class Chatbot extends React.Component {
 
   render() {
     return (
-      <div style={{ height: 400, width: 400, position: 'absolute', bottom: 0, right: 0, border: '1px solid lightgrey'}}>
+      <div style={{ height: '40%', width: '100%', position: 'absolute', bottom: 0, right: 0, border: '1px solid lightgrey'}}>
         <nav>
             <div className="nav-wrapper">
               <a className="brand-logo">Marlowe</a>
