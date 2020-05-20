@@ -12,7 +12,7 @@ const App = () => {
 
     <React.Fragment>
       <div className="container" style={{height: '100%'}}>
-        <div className="row" style={{margin: 'auto', paddingTop: 100}}>
+        <div className="row" style={{margin: 'auto', paddingTop: 50}}>
           <div className="col s6"><Header /></div>
           <div className="col s6"><Chatbot/></div>
         </div>

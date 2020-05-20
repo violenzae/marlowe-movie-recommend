@@ -247,8 +247,10 @@ class Chatbot extends React.Component {
 
   render() {
     return (
+      <React.Fragment>
       <div style={{height: '100%', width: '100%', border: '1px solid lightgrey'}}>
         <nav>
+          
             <div className="nav-wrapper grey">
               <a className="brand-logo">Marlowe</a>
             </div>
@@ -268,13 +270,18 @@ class Chatbot extends React.Component {
          
         </div>
         <div className="col s12">
-        <input style={{margin:0, paddingLeft: '1%', paddingRight: '1%', width: '98%'}} placeholder="Type a message"
+        <input style={{margin:0, paddingLeft: '1%', paddingRight: '1%', width: '98%', color: 'white'}} placeholder="Type a message"
             ref={this.textInput}
             type="text"
             onKeyPress={this.handleInputKeyPress}
           />
         </div>
+        
       </div>
+      <div>
+      <p style={{color: 'white'}}>This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
+      </div>
+      </React.Fragment>
     );
   }
 }
