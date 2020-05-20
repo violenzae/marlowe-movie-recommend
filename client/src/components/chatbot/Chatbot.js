@@ -247,7 +247,7 @@ class Chatbot extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '40%', width: '100%', position: 'absolute', bottom: 0, right: 0, border: '1px solid lightgrey'}}>
+      <div style={{ height: '40%', width: '100%', border: '1px solid lightgrey'}}>
         <nav>
             <div className="nav-wrapper">
               <a className="brand-logo">Marlowe</a>
