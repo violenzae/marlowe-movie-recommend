@@ -5,6 +5,8 @@ import Cookies from 'universal-cookie';
 import {v4 as uuid} from 'uuid';
 import Card from './Card';
 import QuickReplies from './QuickReplies';
+import Title from '../../img/title.png';
+import TitleNeon from '../../img/titleneon.png';
 
 const cookies = new Cookies();
 
@@ -252,7 +254,9 @@ class Chatbot extends React.Component {
         <nav>
           
             <div className="nav-wrapper grey">
-              <a className="brand-logo">Marlowe</a>
+              <a className="brand-logo">
+                <img src={TitleNeon}/>
+              </a>
             </div>
           </nav>
         <div
