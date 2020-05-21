@@ -90,8 +90,13 @@ class Chatbot extends React.Component {
           this.setState({genre: "10749", year: year})
           break;
         default:
-          this.df_text_query("i'm not following your instructions ;)");
+          this.df_text_query("i'm a big dumb dumb who can't read good!");
           break;
+        }
+
+        if (parseInt(year) <= 1900 || parseInt(year) >= 2021){
+          this.df_text_query("I am either from the future or have traumatic brain injury and don't know how numbers work.");
+          
         }
       }
       console.log("queryresult: ", res.data);
