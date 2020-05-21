@@ -31,6 +31,7 @@ https://rocky-meadow-29560.herokuapp.com/
 * Error responses in both APIs
 * Migrate TMDB API call to Express/node.js backend
 * Create logins/have users add movies they want to see to a database
+* Show streaming availability and options for each film with Utelly API
 
 ## Known Bugs
 
