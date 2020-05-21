@@ -56,3 +56,9 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 An excellent Udemy tutorial on implementing the chatbot technology by Jana Bergant: 
 
 https://www.udemy.com/course/chatbot-for-website-with-react-and-nodejs/
+
+### License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+Copyright (c) 2020 **_Rachel Schieferstein_**
