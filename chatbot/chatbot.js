@@ -62,7 +62,7 @@ module.exports = {
     switch (queryResult.action) {
       case 'DefaultWelcomeIntent-yes':
         if (queryResult.allRequiredParamsPresent) {
-          
+
         }
         break;
     }

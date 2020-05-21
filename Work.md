@@ -64,3 +64,9 @@ oh god dammmmn i got the json right in the save state so i don't need the databa
 5/20/20
 
 12:30pm - had an inspired day and pretty much wrapped up all of the coding and design side of things as memorialized in git commits. will now work on deploying, more conversation flavor text in dialogflow console and creating the README.
+
+3:50 utterly stuck for now trying to get the tmdb api call working in the back end as opposed to the front. struggle. bus. the google one is very obscured and specific and is not helpful in replicating it. might not be able to deploy successfully as of yet.. stretch goal.
+
+cleaning up stuff in dialogflow now.
+
+5pm: spent more time trying to pass the key to the front from the back and giving up for now.

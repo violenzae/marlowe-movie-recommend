@@ -5,10 +5,8 @@ import Cookies from 'universal-cookie';
 import {v4 as uuid} from 'uuid';
 import Card from './Card';
 import QuickReplies from './QuickReplies';
-import Title from '../../img/title.png';
-import TitleNeon from '../../img/titleneon.png';
 import TitleNeon2 from '../../img/neon2.png'
-import TitleNeon3 from '../../img/neon3.png'
+
 
 const cookies = new Cookies();
 
@@ -30,7 +28,6 @@ class Chatbot extends React.Component {
     if (cookies.get("userID") === undefined) {
       cookies.set("userID", uuid(), { path: "/" });
     }
-    console.log(cookies.get("userID"));
   }
 
   endIntro = () => {
@@ -99,9 +96,6 @@ class Chatbot extends React.Component {
           
         }
       }
-      console.log("queryresult: ", res.data);
-      console.log(this.state.genre);
-      console.log(this.state.year);
     }
   }
 
@@ -136,12 +130,10 @@ class Chatbot extends React.Component {
     if (this.state.params === true) {
       let year = this.state.year;
       let genre = this.state.genre;
-      axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=popularity.asc&include_adult=false&include_video=false&page=1&year=${year}&with_genres=${genre}`)
+      axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=280512bf8cd265d4e94449e922ca180e&language=en-US&sort_by=popularity.asc&include_adult=false&include_video=false&page=1&year=${year}&with_genres=${genre}`)
           .then(result => { 
             
             this.setState({ cards: result.data.results});
-            console.log(result.data.results);
-            console.log("cards: ", this.state.cards);
             this.setState({params: false});
 
 
@@ -184,7 +176,6 @@ class Chatbot extends React.Component {
     
      if (this.state.cards) {
       let cards = this.state.cards;
-      console.log("cards: ", cards);
 
       return (
 
@@ -256,11 +247,11 @@ class Chatbot extends React.Component {
     return (
       <React.Fragment>
       <div style={{height: '100%', width: '100%'}}>
-        <nav>
+        <nav className="black" style={{paddingBottom: "30px"}}>
           
-            <div className="nav-wrapper black" style={{border: '1px dotted lightgrey'}}>
-              <a className="brand-logo">
-                <img src={TitleNeon2}/>
+            <div className="nav-wrapper  black ">
+              <a className="brand-logo right">
+                <img  src={TitleNeon2}/>
               </a>
             </div>
           </nav>
