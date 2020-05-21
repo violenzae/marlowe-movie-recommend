@@ -3,7 +3,7 @@ import Logo from '../../img/mag.png';
 
 const Message = (props) => {
   return (
-  <div className="col s12 m10 offset-m2 l8 offset-l3">
+  <div className="col s12 m10 offset-m2 l8 offset-l3" style={{float: "left"}}>
     <div className="card-panel grey lighten-5 z-depth-1">
       <div className="row valign-wrapper">
         {props.speaks==='bot' &&
