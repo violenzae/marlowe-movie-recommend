@@ -23,13 +23,18 @@ class Chatbot extends React.Component {
       year: "",
       cards: null,
       fields: null,
-      params: false
+      params: false,
+      intro: false
     };
 
     if (cookies.get("userID") === undefined) {
       cookies.set("userID", uuid(), { path: "/" });
     }
     console.log(cookies.get("userID"));
+  }
+
+  endIntro = () => {
+    this.setState({intro: false});
   }
 
   async df_text_query(text) {
@@ -114,10 +119,9 @@ class Chatbot extends React.Component {
 
 
  async componentDidMount() {
+    this.setState({intro: true});
     await this.resolveAfterXSeconds(1);
     this.df_event_query("Welcome");
-    
-      
 
   }
 
@@ -172,6 +176,7 @@ class Chatbot extends React.Component {
 
   renderOneMessage(message, i) {
     
+    
      if (this.state.cards) {
       let cards = this.state.cards;
       console.log("cards: ", cards);
@@ -186,7 +191,9 @@ class Chatbot extends React.Component {
                 </div>
       );
     } 
+
     
+
     if (message.msg && message.msg.text && message.msg.text.text) {
       
       return (
@@ -212,6 +219,15 @@ class Chatbot extends React.Component {
   }
 
   renderMessages(stateMessages) {
+    if(this.state.intro) {
+      return(
+        <div style={{color: 'white'}}>
+          <p>Marlowe is a bot detective with a passion for sniffing and discovering the unknown and obscure. Answer his questions, and he'll find you the most obscure movies that fit your request.</p>
+          <p>You can also shoot the breeze with him for a stiff drink of hard-boiled whimsy.</p>
+          <button className="btn black" style={{border: 'solid white 1px'}} onClick={this.endIntro}>Hmm..</button>
+        </div>
+      )
+    }
     if(this.state.cards){
       return this.renderOneMessage();
     }
